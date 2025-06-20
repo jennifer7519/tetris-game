@@ -605,16 +605,6 @@
             for (let y = 0; y < ROWS; y++) {
                 for (let x = 0; x < COLS; x++) {
                     if (board[y][x]) {
-                        drawBlock(ctx, x * BLOCK_SIZE, y * BLOCK_SIZE, board[y][x]);
-                    }
-                }
-            }
-        }
-
-        function drawPiece(piece, context = ctx, offsetX = 0, offsetY = 0, blockSize = BLOCK_SIZE) {
-            for (let y = 0; y < piece.shape.length; y++) {
-                for (let x = 0; x < piece.shape[y].length; x++) {
-                    if (piece.shape[y][x]) {
                         drawBlock(
                             context,
                             (piece.x + x) * blockSize + offsetX,
@@ -1025,4 +1015,14 @@
         init();
     </script>
 </body>
-</html>
+</html>ctx, x * BLOCK_SIZE, y * BLOCK_SIZE, board[y][x]);
+                    }
+                }
+            }
+        }
+
+        function drawPiece(piece, context = ctx, offsetX = 0, offsetY = 0, blockSize = BLOCK_SIZE) {
+            for (let y = 0; y < piece.shape.length; y++) {
+                for (let x = 0; x < piece.shape[y].length; x++) {
+                    if (piece.shape[y][x]) {
+                        drawBlock(
